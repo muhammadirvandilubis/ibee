@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column; /* To support vertical stacking on small screens */
+}
+
+.sidebar {
+    width: 200px; /* Fixed width for larger screens */
+    background-color: #e6e6e6; /* Light grey background */
+    padding: 20px;
+    position: fixed; /* Fixed position for sidebar */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-header img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+.sidebar-menu a:hover {
+    background-color: #ddd; /* Darker background on hover */
+}
+
+.sidebar-menu i {
+    width: 20px;
+    text-align: center;
+}
+
+.content {
+    padding: 20px;
+    text-align: center; /* Centered title text */
+    flex: 1; /* Take remaining space */
+    margin-left: 220px; /* Offset for sidebar */
+    transition: margin-left 0.3s ease;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centered cards */
+}
+
+.card {
+    flex: 1;
+    max-width: 300px; /* Restrict card width */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-body h2 {
+    font-size: 28px;
+    margin: 0;
+    color: #333; /* Darker text */
+}
+
+.card-body p {
+    margin: 10px 0 0;
+    color: #555; /* Darker text */
+}
+
+.blue {
+    background-color: #d0e7ff; /* Pastel Blue */
+    color: #333;
+}
+
+.green {
+    background-color: #d9f2d9; /* Pastel Green */
+    color: #333;
+}
+
+.orange {
+    background-color: #ffe6cc; /* Pastel Orange */
+    color: #333;
+}
+
+.chart-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px; /* Smaller width for charts */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .content {
+        margin-left: 0;
+        margin-top: 20px; /* Add margin to top to prevent content overlap */
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 90%; /* Reduce card width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .card-body h2 {
+        font-size: 24px;
+    }
+}
